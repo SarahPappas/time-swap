@@ -1,0 +1,27 @@
+{
+  "name": "project_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "express-session": "^1.14.1",
+    "nodemailer": "^2.6.4",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.24.5",
+    "sequelize-cli": "^2.4.0",
+    "session": "^0.1.0"
+  }
+}

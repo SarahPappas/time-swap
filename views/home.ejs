@@ -1,0 +1,55 @@
+<div class="home-hero">
+	<!-- <img src="img/garden-hero.jpeg"> -->
+	<div class="home-hero-text-container">
+		<form method="POST" action="/results">
+			<h1>Search</h1>
+			<div>
+			 	<div class="search-row">
+				 	<label class="label">I need help with: </label>
+					<% var dropdownItems = tasks; %>
+					<% var dropdownClass = "want-dropdown"; %>
+					<% include partials/dropdown.ejs %>
+			 	</div>
+				
+				<div class="search-row">
+					<label class="label">I can help with: </label>
+					<% dropdownItems = tasks; %>
+					<% dropdownClass = "provide-dropdown"; %>
+					<% include partials/dropdown.ejs %>
+				</div>
+
+			</div>
+
+			<input type="hidden" name="wantTask" value="">
+			<input type="hidden" name="provideTask" value="">
+
+			<button type="submit" class="search-button">go</button>
+		</form>
+	</div>
+		
+	</div>
+</div>
+<div class="how-it-works" id="how-it-works">
+	<div class="how-it-works-header"><h1>how it works</h1></div>
+	<h2>Trade your time and skills with a neighbor.</h2>
+	<div class="how-it-works-table">
+		<table>
+		  <tr>
+		    <td class="step">step one</td> 
+		    <td class="step-description">You tell us what service you're looking for and what service you can trade.</td>
+		  </tr>
+		  <tr>
+		    <td class="step">step two</td> 
+		    <td class="step-description">We match you with people who are looking for the service you can proivde, and who can provide the service you want.</td>
+		  </tr>
+		  <tr>
+		    <td class="step">step three</td> 
+		    <td class="step-description">You send them a message to negotiate your trade.</td>
+		  </tr>
+		</table>
+	</div>
+</div>
+<script>
+	new Dropdown(".want-dropdown", 'input[name="wantTask"]');
+	new Dropdown(".provide-dropdown", 'input[name="provideTask"]');
+</script>

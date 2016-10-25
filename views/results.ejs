@@ -1,0 +1,32 @@
+<div class="page-container">
+	<% if(!results) { %>
+		<div class="result-none-container">
+			Sorry, we did not find any matches for your swap.
+		</div>
+	<% } else { %>
+		<div class="search-results-container">
+			<div class="result-container">
+				<% results.forEach(function(result) { %>
+					<div class="search-result">
+						<img class="result-pic" src="<%= result.picture %>">
+						<div class="result-text-container">
+
+							<%= result.firstName %>
+							is looking for help with <% tasks.forEach(function(task) { %>
+								<% if (result.userWantTaskId == task.id) { %>
+								<%= task.task %>
+							<%} })  %>
+							 and would like help with <% tasks.forEach(function(task) { %>
+							 <% if (result.userNeedTaskId == task.id) { %>
+								<%= task.task %>
+							<%} })  %>
+						</div>
+						<% if(user){ %>
+							<div class="mail-icon-container"><a href="/message/<%= result.id %>"><img class="mail-icon" src="img/mail-icon.svg"></a></div>
+						<% } %>
+					</div>
+				<% }); %>
+			</div>
+		</div>
+	<% } %>
+</div>

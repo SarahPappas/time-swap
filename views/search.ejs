@@ -1,0 +1,48 @@
+<div class="page-container">
+	<div class="search-form form">
+	<h2>This is a search party</h2>
+	<img class="search-img" src="img/search-icon.svg">
+		<form method="POST" action="/results">
+
+			<input type="hidden" name="metroArea" value="">
+			<input type="hidden" name="wantTask" value="">
+			<input type="hidden" name="provideTask" value="">
+
+			<section class="table">
+				<div  class="row">
+					<!-- location -->
+					<div class="cell"><label>City: </label></div>
+					<div class="cell">
+						<% var dropdownItems = metroAreas; %>
+						<% var dropdownClass = "metro-area-dropdown"; %>
+						<% include partials/dropdown.ejs %>
+					</div>
+				</div>
+				<!-- want -->
+				<div  class="row">
+					<div class="cell"><label>I need help with: </label></div>
+					<div class="cell">
+						<% dropdownItems = tasks; %>
+						<% dropdownClass = "want-dropdown"; %>
+						<% include partials/dropdown.ejs %>
+					</div>
+				</div>
+				<!-- provide -->
+				<div  class="row">
+					<div class="cell"><label>I can help with: </label></div>
+					<div class="cell">					
+						<% dropdownItems = tasks; %>
+						<% dropdownClass = "provide-dropdown"; %>
+						<% include partials/dropdown.ejs %>
+					</div>
+				</div>
+			</section>
+			<button type="submit" class="search-button">search</button>
+		</form>
+	</div>
+</div>
+<script>
+	new Dropdown(".want-dropdown", 'input[name="wantTask"]');
+	new Dropdown(".provide-dropdown", 'input[name="provideTask"]');
+	new Dropdown(".metro-area-dropdown", 'input[name="metroArea"]');
+</script>

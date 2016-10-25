@@ -1,0 +1,17 @@
+<div class="page-container">
+	<% if(!user) { %>
+		<div class="message-error"><h1>You need to be logged in to send a message.</h1></div>
+	<% } else { %>
+	<div class="message form">
+		<form method="POST" action="/message">		
+			<div class="form-header"><h1>message content:</h2></div>
+			<div>
+				<textarea class="message-input" type="text" name="message" placeholder="Hi, I'd really like to trade..."></textarea>
+			</div>
+			<input type="hidden" name="contactId" value="<%= contactId %>">
+			
+			<button type="submit" class="message-button">send</button>
+		</form>
+	</div>
+	<% } %>
+</div>

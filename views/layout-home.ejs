@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time Swap</title>
+	<link rel="stylesheet" type="text/css" href="/css/style-home.css">
+	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.js"></script>
+	<script src="/js/dropdown.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div>
+			<a href="/"><img src="/img/logo-white.svg" class="logo"></a>
+		</div>
+		<div>
+			<% if (!user) { %>
+				<div class="menu-item"><a href="/auth/">Sign Up</a></div>
+				<div class="menu-item"><a href="/#how-it-works">How it Works</a></div>
+				<div class="menu-item"><a href="/auth/">Log In</a></div>
+			<% } else { %>
+				<div class="menu-item"><a href="/search">Search</a></div>
+				<div class="menu-item"><a href="/profile">Profile</a></div>
+				<div class="menu-item"><a href="/auth/logout">Log Out</a></div>
+			<% } %>
+		</div>
+		
+	</div>
+	<div><%- body %></div>
+
+	<div class="footer">
+		<div class="left-footer">
+			<div class="footer-item"><a href="/termsandconditions">Terms and Conditions</a></div>
+		</div>
+	</div>
+</body>
+</html>

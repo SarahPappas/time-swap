@@ -1,0 +1,53 @@
+<div class="page-container">
+	<div class="profile-form form">
+		<div class="form-header"><h2><%= user.firstName %>'s Profile</h2></div>
+		<img class="profile-pic" src="<%= user.picture %>">
+		<form method="POST" action="/profile">
+			<section class="table">
+				<div  class="row">
+					<div class="cell"><label>City: </label></div>
+					<div class="cell">
+						<select name="metroArea" id="metroArea">
+								<% metroAreas.forEach(function(area) { %>		
+									<% if( userRecord.metroAreaId ==  area.id) { %>
+										<option value="<%= area.id %>" selected="selected"><%= area.metroArea %></option>
+									<% } else { %>
+										<option value="<%= area.id %>"><%= area.metroArea %></option>
+									<% } %>
+								<% }); %>
+							</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell"><label>I need help with: </label></div>
+					<div class="cell">
+						<select name="wantTask" id="wantTask">
+							<% tasks.forEach(function(task) { %>
+								<% if( userRecord.userWantTaskId ==  task.id) { %>
+									<option value="<%= task.id %>" selected="selected"><%= task.task %></option>
+								<% } else { %>
+		                        	<option value="<%= task.id %>"><%= task.task %></option>
+		                        <% } %>
+		                    <% }); %>			
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="cell"><label>I can help with: </label></div>
+					<div class="cell">
+						<select name="provideTask" id="provideTask">
+							<% tasks.forEach(function(task) { %>
+								<% if( userRecord.userNeedTaskId ==  task.id) { %>
+									<option value="<%= task.id %>" selected="selected"><%= task.task %></option>
+								<% } else { %>
+			                    	<option value="<%= task.id %>"><%= task.task %></option>
+			                    <% } %>
+			                <% }); %>
+						</select>
+					</div>
+				</div>
+			</section>
+			<button type="submit" class="search-button">save</button>
+		</form>
+	</div>	
+</div>

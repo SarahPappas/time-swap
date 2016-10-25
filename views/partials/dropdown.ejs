@@ -1,0 +1,11 @@
+<div class="dropdown <%= dropdownClass %>">
+ 	<div class="dropbtn">
+  		<li class="js-item selected-item" value="anything" ">anything</li>
+  	</div>
+  	<ul class="dropdown-content">
+		<li class="js-item" value="anything">anything</li>
+  		<% dropdownItems.forEach(function(item) { %>
+    		<li class="js-item" value="<%= item.id %>"><%= item.task || item.metroArea || item.name %></li>
+    	<% }); %>
+  	</ul>
+</div>
